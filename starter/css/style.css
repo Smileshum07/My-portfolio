@@ -1,0 +1,293 @@
+/* Variables */
+
+:root {
+  --main-color: rgb(29, 29, 115);
+  --hover-color: rgb(69, 69, 241);
+  --img-color: white;
+  --main-wight: 50%;
+  --padding: 5%;
+  --font-size-h2: 30px;
+  --list-font-size: 20px;
+  --main-font-size: 22px;
+}
+
+/* Main style */
+* {
+  box-sizing: border-box;
+  color: var(--main-color);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  padding-bottom: 2%;
+}
+
+p {
+  margin: 0;
+}
+
+.page-section {
+  padding: var(--padding);
+  
+}
+
+li {
+  font-size: var(--list-font-size);
+  cursor: pointer;
+}
+
+/* Animation */
+
+li:hover {
+  color: var(--hover-color);
+}
+
+a:hover {
+  color: var(--hover-color);
+}
+
+h3 {
+  color: var(--img-color);
+  margin: 10px;
+  font-size: var(--list-font-size);
+}
+
+#projects-grid div:hover {
+  transform: scale(1.1);
+}
+
+#projects-grid div h3:hover {
+  font-size: 23px;
+}
+
+#projects-grid div {
+  transition: transform 0.25s;
+}
+
+/* Header */
+ 
+.header {
+  height: 150px;
+  display: flex;
+  flex-flow: row;
+  justify-content: end;
+  align-items: center;
+}
+
+h1 {
+  width: var(--main-wight);
+  padding-left: var(--padding);
+}
+
+nav{
+  width: var(--main-wight);
+}
+nav ul {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+nav ul li {
+  list-style: none; 
+}
+
+/* Hero banner */
+
+.hero-banner div {
+  height: 230px;
+  background-image: url("./images/tech.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.banner {
+  color: var(--img-color);
+  font-size: 45px;
+}
+
+/* about me */
+
+.about-me {
+  display: flex;
+  text-align: justify;
+  align-items: center;
+  height: 30%;
+}
+
+.about-me p {
+  font-size: var(--main-font-size);
+}
+
+.avatar {
+  width: 30%;
+  height: auto;
+  padding-right: var(--padding);
+}
+
+/* projects */
+
+#projects-grid {
+  display: grid;
+  width: 100%;
+  grid-gap: 5px;
+  max-height: 1000px;
+  margin: 0 auto;
+  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 60% 40%);
+  grid-template-areas:
+    "web-site feature"
+    "web-site  calculator"
+    "web-site app";
+}
+
+#web-site {
+  grid-area: web-site;
+  border: solid 1px var(--main-color);
+  width: auto;
+  background: var(--img-color);
+}
+
+#web-site img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  
+}
+
+#web-site h3 {
+  background-color: var(--main-color);
+  padding-left: 10px;
+}
+
+#feature {
+  grid-column-start: feature;
+  border: solid 1px var(--main-color);
+  background-image: url("./images/Feature.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+}
+
+#calculator {
+  grid-column: calculator;
+  border: solid 1px var(--main-color);
+  background-image: url("./images/Calculator.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+}
+
+#app {
+  grid-column: app;
+  border: solid 1px var(--main-color);
+  background-image: url("./images/App.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: initial;
+}
+
+.page-section {
+  cursor: pointer;
+}
+
+/* contact me */
+
+.contact-nav ul {
+  padding-left: 0px;
+  list-style: none;
+
+}
+.contact-nav ul li {
+  padding-bottom: 10px;
+}
+
+.contact-nav ul li a {
+  text-decoration: none;
+}
+
+
+/* Media */
+
+@media all and (max-width: 770px) {
+  /* main */
+  h2 {
+    font-size: var(--list-font-size);
+  }
+
+    li {
+      font-size: 16px;
+    }
+
+  /* Header*/
+  nav ul {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-around;
+      align-items: center;
+    }
+  h1 {
+    font-size: var(--list-font-size);
+  }  
+  
+  /* banner */
+  .banner {
+    
+    font-size: 30px;
+  }  
+
+  /* about me */
+  .about-me {
+    display: block;
+    
+  }
+
+  .about-me p {
+    font-size: 16px;
+  }
+
+  .avatar {
+    padding-bottom: var(--padding);
+  }
+
+    /* projects */
+    #projects-grid {
+      display: grid;
+      grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "web-site"
+          "feature"
+          "calculator" 
+          "app";
+    }
+    #web-site {
+      height: 200px;
+    }
+    /* contact me */
+  
+}
